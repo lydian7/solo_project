@@ -1,0 +1,41 @@
+header {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    background-color: beige;
+    border-style: outset;
+    padding: 15px;
+    justify-content: center;
+}
+
+header > img {
+    height: 125px;
+    width: auto;
+
+}
+
+body {
+    margin: 0;
+}
+
+.indexlogin {
+    border-style: inset;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    padding: 50px;
+}
+
+.indexform {
+    display: flex;
+    justify-content:space-evenly;
+    flex-direction: column;
+}
+
+.indexform > label, select, input {
+    margin-bottom: 5px;
+}
+
+#indexinput {
+    margin-top: 10px;
+}

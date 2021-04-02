@@ -3,3 +3,5 @@ class Branch:
         self.location = location
         self.manager = manager
         self.id = id
+
+    

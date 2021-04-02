@@ -1,5 +1,5 @@
-DROP TABLE branches;
 DROP TABLE products;
+DROP TABLE branches;
 DROP TABLE manufacturers;
 
 CREATE TABLE manufacturers (
@@ -9,6 +9,12 @@ CREATE TABLE manufacturers (
     active BOOLEAN
 );
 
+CREATE TABLE branches (
+    id SERIAL PRIMARY KEY,
+    location VARCHAR,
+    manager VARCHAR
+);
+
 CREATE TABLE products (
     id SERIAL PRIMARY KEY,
     name VARCHAR,
@@ -16,14 +22,8 @@ CREATE TABLE products (
     quantity INT,
     purchase_price FLOAT,
     selling_price FLOAT,
-    manufacturer_id INT REFERENCES manufacturers(id)
-);
-
-CREATE TABLE branches (
-    id SERIAL PRIMARY KEY,
-    location VARCHAR,
-    manager VARCHAR,
-    product_id INT REFERENCES products(id)
+    manufacturer_id INT REFERENCES manufacturers(id) ON DELETE CASCADE,
+    branch_id INT REFERENCES branches(id) ON DELETE CASCADE
 );
 
 -- INSERT INTO manufacturers (name, type, active) VALUES ('Procter & Gamble', 'FMCG', True);

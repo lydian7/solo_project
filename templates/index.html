@@ -1,6 +1,18 @@
 {% extends 'base.html'  %}
 {% block content %}    
 
-This will be the welcome page, featuring 3 boxes in middle of page, all inventory, inventory per branch and stats?
+<section class="indexlogin">
+    <form class="indexform" action="/branches/branch.id" method="POST">
+        <label for="managers">Select User</label>
+        <select name="managers" id="managers">
+            {% for branch in branches %}
+                <option value="{{branch.manager}}">{{branch.manager}}</option>    
+            {% endfor %}
+        </select>
+        <label for="password">Enter Password</label>
+        <input type="text" placeholder="Password" required>
+        <input id="indexinput" type="submit" value="Submit">
+    </form>
+</section>
 
 {% endblock %}
