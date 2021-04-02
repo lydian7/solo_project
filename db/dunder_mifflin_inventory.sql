@@ -15,14 +15,14 @@ CREATE TABLE products (
     description VARCHAR,
     quantity INT,
     purchase_price FLOAT,
-    selling_price FLOAT
+    selling_price FLOAT,
+    manufacturer_id INT REFERENCES manufacturers(id)
 );
 
 CREATE TABLE branches (
     id SERIAL PRIMARY KEY,
     location VARCHAR,
     manager VARCHAR,
-    manufacturer_id INT REFERENCES manufacturers(id),
     product_id INT REFERENCES products(id)
 );
 
