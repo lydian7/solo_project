@@ -90,7 +90,7 @@ table, th, td {
     padding: 20px;
 }
 
-#viewbuttons > button {
+#viewbuttons > form {
     margin-right: 15px;
 }
 

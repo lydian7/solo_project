@@ -44,3 +44,21 @@ def add():
 def delete(id):
     product_repository.delete(id)
     return redirect("/products")
+
+@products_blueprint.route("/products/<id>/edit", methods=["GET"])
+def edit(id):
+    product = product_repository.select(id)
+    return render_template('products/edit.html', product = product)
+
+@products_blueprint.route("/products/<id>", methods=["POST"])
+def update(id):
+    name = request.form['name']
+    description = request.form['description']
+    quantity = request.form['quantity']
+    purchase_price = request.form['purchase_price']
+    selling_price = request.form['selling_price']
+    manufacturer_id = request.form['manufacturer_id']
+    branch_id = request.form['branch_id']
+    product = Product(name, description, quantity,purchase_price, selling_price, manufacturer_id, branch_id)
+    product_repository.update(product)
+    return redirect("/products")

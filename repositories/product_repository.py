@@ -39,7 +39,12 @@ def select(id):
     if result is not None:
         product = Product(result['name'], result['description'], result['quantity'], result['purchase_price'], result['selling_price'], result['manufacturer_id'], result['branch_id'], result['id'])
 
-    return product    
+    return product   
+
+def update(product):
+    sql = "UPDATE products SET (name, description, quantity, purchase_price, selling_price, manufacturing_id, branch_id) WHERE product.id = %s"
+    values = [product.name, product.description, product.quantity, product.purchase_price, product.selling_price, product.manufacturer_id, product.branch_id, product.id]     
+    run_sql(sql, values)
 
 
 

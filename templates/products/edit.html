@@ -1,6 +1,31 @@
 {% extends 'base.html' %}
 {% block content %}
 
-
+<form action="/products/{{product.id}}" method="POST">
+    
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" value="{{product.name}}" required>
+        <label for="description">Description</label>
+        <input type="text" id="description" name="description" value="{{product.description}}" required>
+        <label for="quantity">Quantity</label>
+        <input type="text" id="quantity" name="quantity" value="{{product.quantity}}" required>
+        <label for="purchase_price">Purchase Price</label>
+        <input type="number" name="purchase_price" required min="0" value="0" step=".01" required>
+        <label for="selling_price">Selling Price</label>
+        <input type="number" name="selling_price" required min="0" value="0" step=".01" required>
+        <label for="manufacturer_id">Manufacturer</label>
+        <select name="manufacturer_id" id="manufacturer_id">
+            {% for manufacturer in manufacturers  %}
+            <option value="{{manufacturer.id}}">{{manufacturer.name}}</option>
+            {% endfor %}
+        </select>
+        <label for="branch_id">Branch</label>
+        <select name="branch_id" id="branch_id">
+            {% for branch in branches  %}
+            <option value="{{branch.id}}">{{branch.location}}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Submit">
+</form>
     
 {% endblock %}

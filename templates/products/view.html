@@ -40,7 +40,9 @@
     </table>
 </section>        
 <section id="viewbuttons">
+    <form action="/products/{{product.id}}/edit">
     <button>Edit</button>
+    </form>
     <form action="/products/delete/{{product.id}}" method="POST">
     <button value="{{product.id}}">Delete</button>
     </form>
