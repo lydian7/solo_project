@@ -1,7 +1,7 @@
-{% extends 'base.html'  %}
-{% block content %}    
+{% extends 'base.html' %}
+{% block content %}
 
-<section class="indexbranchselect">
+<section class="indexlogin">
     <form class="indexform" action="/branches" method="POST">
         <label for="location">Select Branch</label>
         <select name="location" id="location">
@@ -9,7 +9,9 @@
                 <option value="{{branch.id}}">{{branch.location}}</option>    
             {% endfor %}
         </select>
-        <input id="branchsubmit" type="submit" value="Submit">
+        <label for="password">Enter Password</label>
+        <input type="text" name="password" placeholder="Password" required>
+        <input id="indexinput" type="submit" value="Submit">
     </form>
 </section>
 

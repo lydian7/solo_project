@@ -12,7 +12,8 @@ CREATE TABLE manufacturers (
 CREATE TABLE branches (
     id SERIAL PRIMARY KEY,
     location VARCHAR,
-    manager VARCHAR
+    manager VARCHAR,
+    password INT
 );
 
 CREATE TABLE products (

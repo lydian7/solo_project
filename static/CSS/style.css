@@ -39,3 +39,12 @@ body {
 #indexinput {
     margin-top: 10px;
 }
+
+table, th, td {
+    border-style: ridge;
+    border: 1px solid black;
+    padding: 15px;
+    table-layout: fixed;
+    margin: auto;
+    margin-top: 10px;
+}

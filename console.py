@@ -21,9 +21,9 @@ manufacturer_repository.save(manufacturer2)
 manufacturer_repository.save(manufacturer3)
 manufacturer_repository.save(manufacturer4)
 
-branch1 = Branch("Scranton", "Michael Scott")
-branch2 = Branch("Long Island", "Dwight Schrute")
-branch3 = Branch("Talahasse", "Joanne Brown")
+branch1 = Branch("Scranton", "Michael Scott", 1234)
+branch2 = Branch("Long Island", "Dwight Schrute", 1234)
+branch3 = Branch("Talahasse", "Joanne Brown", 1234)
 
 branch_repository.save(branch1)
 branch_repository.save(branch2)
@@ -51,7 +51,15 @@ for product in products:
     product_repository.save(product)
 
 
-for product in product_repository.select_all():
-    print (product.__dict__)
+# for product in product_repository.select_all():
+#     print (product.__dict__)
+
+# for branch in branch_repository.select_all():
+#     print(branch.__dict__)
+
+inventory = branch_repository.branch_inventory(branch1)
+
+for product in inventory:
+    print (product.name)
 
 pdb.set_trace()
