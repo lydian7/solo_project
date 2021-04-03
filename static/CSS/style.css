@@ -48,3 +48,49 @@ table, th, td {
     margin: auto;
     margin-top: 10px;
 }
+
+#newproductform {
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    width: 25%;
+}
+
+.fixed_header{
+    display:table;
+    table-layout:fixed;
+    border-collapse: collapse;
+}
+
+.fixed_header tbody{
+  display:block;
+  width: 100%;
+  overflow: auto;
+  height: 250px;
+}
+
+.fixed_header > thead > tr {
+   display: block;
+}
+
+.fixed_header  thead {
+  background: blue;
+  color:#fff;
+}
+
+.fixed_header th, .fixed_header td {
+  padding: 5px;
+  text-align: center;
+  width: 200px;
+}
+
+#viewbuttons {
+    display:flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+#viewbuttons > button {
+    margin-right: 15px;
+}
+

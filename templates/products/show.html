@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<table class="fixed_header">
+    <thead>
+        <tr>
+            <th>Product Id</th>
+            <th>Product name</th>
+            <th>Description</th>
+            <th>Stock</th>
+            <th>Manufacturer</th>
+            <th>Branch</th>
+        </tr>
+    </thead> 
+    <tbody>   
+        {% for product in products  %}
+        <tr>
+            <td><a href="/products/{{product.id}}">{{product.id}}</a></td>
+            <td>{{product.name}}</td>
+            <td>{{product.description}}</td>
+            <td>{{product.quantity}}</td>
+            {% for manufacturer in manufacturers  %}
+                {% if  product.manufacturer_id == manufacturer.id%}
+                <td>{{manufacturer.name}}</td>        
+                {% endif %}
+            {% endfor %}
+            {% for branch in branches %}
+                {% if product.branch_id == branch.id %}
+                <td>{{branch.location}}</td>        
+                {% endif %}
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>    
+</table>
+
+<a href="products/new">Create new Product</a>
+<a href="/home">back</a>
+    
+{% endblock %}

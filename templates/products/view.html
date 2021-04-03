@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section id="viewproduct">
+    <table>
+        <thead>
+            <tr>
+                <th>Product ID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Stock</th>
+                <th>Purchase Price</th>
+                <th>Selling Price</th>
+                <th>Manufacturer Name</th>
+                <th>Branch Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tbody>   
+                <tr>
+                    <td>{{product.id}}</td>
+                    <td>{{product.name}}</td>
+                    <td>{{product.description}}</td>
+                    <td>{{product.quantity}}</td>
+                    <td>{{product.purchase_price}}</td>
+                    <td>{{product.selling_price}}</td>
+                    {% for manufacturer in manufacturers  %}
+                        {% if  product.manufacturer_id == manufacturer.id%}
+                        <td>{{manufacturer.name}}</td>        
+                        {% endif %}
+                    {% endfor %}
+                    {% for branch in branches %}
+                        {% if product.branch_id == branch.id %}
+                        <td>{{branch.location}}</td>        
+                        {% endif %}
+                    {% endfor %}
+                </tr>
+            </tbody> 
+        </tbody>
+    </table>
+</section>        
+<section id="viewbuttons">
+    <button>Edit</button>
+    <form action="/products/delete/{{product.id}}" method="POST">
+    <button value="{{product.id}}">Delete</button>
+    </form>
+</section>
+
+{% endblock %}

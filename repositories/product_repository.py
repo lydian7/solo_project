@@ -25,7 +25,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        product = Product(row['name'], row['description'], row['quantity'], row['purchase_price'], row['selling_price'], row['manufacturer_id'], row['branch_id'])
+        product = Product(row['name'], row['description'], row['quantity'], row['purchase_price'], row['selling_price'], row['manufacturer_id'], row['branch_id'], row['id'])
         products.append(product)
 
     return products
@@ -37,7 +37,7 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        product = Product(result['name'], result['description'], result['quantity'], result['purchase_price'], result['selling_price'], result['manufacturer_id'], result['branch_id'])
+        product = Product(result['name'], result['description'], result['quantity'], result['purchase_price'], result['selling_price'], result['manufacturer_id'], result['branch_id'], result['id'])
 
     return product    
 

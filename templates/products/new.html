@@ -1,20 +1,29 @@
 {% extends 'base.html' %}
 {% block content %}
-<form action="/products" method="post">
+<form id="newproductform" action="/products" method="post">
     <label for="name">Product Name</label>
     <input type="text" name="name">
     <label for="description">Description</label>
-    <input type="text" name="description">
+    <textarea type="text" name="description"> </textarea>
     <label for="quantity">Starting Stock</label>
     <input type="number" name="quantity">
     <label for="purchase_price">Purchase Price</label>
     <input type="number" name="purchase_price" required min="0" value="0" step=".01">
     <label for="selling_price">Selling Price</label>
     <input type="number" name="selling_price" required min="0" value="0" step=".01">
-    <label for="manufacturer_id">Manufacturer #</label>
-    <input type="number" name="manufacturer_id">
-    <label for="branch_id">Branch #</label>
+    <label for="manufacturer_id">Manufacturer</label>
+    <select name="manufacturer_id" id="manufacturer_id">
+        {% for manufacturer in manufacturers  %}
+        <option value="{{manufacturer.id}}">{{manufacturer.name}}</option>
+        {% endfor %}
+    </select>
+    <label for="branch_id">Branch</label>
+    <select name="branch_id" id="branch_id">
+        {% for branch in branches  %}
+        <option value="{{branch.id}}">{{branch.location}}</option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Submit">
 </form>
-<a href="/branches/{{id}}">Back to branch</a>
-
-{% endblock content %}
+<a href="/home">Back to home</a>
+{% endblock %}
