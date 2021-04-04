@@ -94,3 +94,10 @@ table, th, td {
     margin-right: 15px;
 }
 
+.producteditform {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 25%;
+}
+
