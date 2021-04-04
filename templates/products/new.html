@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-<form id="newproductform" action="/products" method="post">
+<form class="newform" action="/products" method="post">
     <label for="name">Product Name</label>
     <input type="text" name="name">
     <label for="description">Description</label>
@@ -14,7 +14,9 @@
     <label for="manufacturer_id">Manufacturer</label>
     <select name="manufacturer_id" id="manufacturer_id">
         {% for manufacturer in manufacturers  %}
+        {% if manufacturer.active == true %}
         <option value="{{manufacturer.id}}">{{manufacturer.name}}</option>
+        {% endif %}
         {% endfor %}
     </select>
     <label for="branch_id">Branch</label>

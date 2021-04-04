@@ -3,8 +3,8 @@ from db.run_sql import run_sql
 from models.manufacturer import Manufacturer
 
 def save(manufacturer):
-    sql = "INSERT INTO manufacturers(name, type, active) VALUES (%s,%s,%s) RETURNING id"
-    values = [manufacturer.name, manufacturer.type, manufacturer.active]
+    sql = "INSERT INTO manufacturers(name, type, address, email, contact_person, telephone, active) VALUES (%s,%s,%s,%s,%s,%s,%s) RETURNING id"
+    values = [manufacturer.name, manufacturer.type, manufacturer.address, manufacturer.email, manufacturer.contact_person, manufacturer.telephone, manufacturer.active]
     results = run_sql(sql, values)
     manufacturer.id = results[0]['id']
     return manufacturer
@@ -25,7 +25,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        manufacturer = Manufacturer(row['name'], row['type'], row['active'], row['id'])
+        manufacturer = Manufacturer(row['name'], row['type'], row['address'], row['email'], row['contact_person'], row['telephone'], row['active'], row['id'])
         manufacturers.append(manufacturer)
 
     return manufacturers
@@ -37,8 +37,12 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        manufacturer = Manufacturer(result['name'], result['type'], result['active'], result['id'])
+        manufacturer = Manufacturer(result['name'], result['type'], result['address'], result['email'], result['contact_person'], result['telephone'], result['active'], result['id'])
 
-    return manufacturer    
+    return manufacturer
 
+def update(manufacturer):
+    sql = "UPDATE manufacturers SET (name, type, address, email, contact_person, telephone, active) = (%s,%s,%s,%s,%s,%s,%s) WHERE id = %s"
+    values = [manufacturer.name, manufacturer.type, manufacturer.address, manufacturer.email, manufacturer.contact_person, manufacturer.telephone, manufacturer.active, manufacturer.id]
+    run_sql(sql, values)
             

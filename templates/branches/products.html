@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section class="viewfilter">
+    <form action="/branches/products" method = "POST">
+        <label for="branch">View by branch</label>
+        <select name="branch" id="branch">
+            {% for branch in branches  %}
+                <option value="{{branch.id}}">{{branch.location}}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Go">
+    </form>
+    
+    <form action="/manufacturers/products" method = "POST">
+        <label for="manufacturers">View by Manufacturer</label>
+        <select name="manufacturer" id="manufacturer">
+            {% for manufacturer in manufacturers  %}
+                {% if manufacturer.active == true %}
+                <option value="{{manufacturer.id}}">{{manufacturer.name}}</option>
+                {% endif %}
+            {% endfor %}
+        </select>
+        <input type="submit" value="Go">
+    </form>
+</section>
+    
+
+
+<table class="fixed_header">
+        <thead>
+            <tr>
+                <th>Product name</th>
+                <th>Description</th>
+                <th>Stock</th>
+                <th>Purchase Price</th>
+                <th>Sale Price</th>
+                <th>Manufacturer</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for product in inventory  %}
+            <tr>
+                <td>{{product.name}}</td>
+                <td>{{product.description}}</td>
+                <td>{{product.quantity}}</td>
+                <td>{{product.purchase_price}}</td>
+                <td>{{product.selling_price}}</td>
+                    {% for manufacturer in manufacturers  %}
+                        {% if  product.manufacturer_id == manufacturer.id%}
+                        <td>{{manufacturer.name}}</td>        
+                        {% endif %}
+                    {% endfor %}
+            </tr>
+        {% endfor %}    
+        </tbody>
+    </table>
+   
+    <a href="/home">Back to main</a>
+
+
+
+{% endblock %}

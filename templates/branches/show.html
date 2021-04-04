@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <table class="fixed_header">
+        <thead>
+            <tr>
+                <th>Branch name</th>
+                <th>Manager</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for branch in branches  %}
+            <tr>
+                    <td>{{branch.location}}</td>
+                    <td>{{branch.manager}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>            
+    </table>
+   
+    <a href="/home">Back to main</a>
+
+{% endblock %}

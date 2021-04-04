@@ -6,6 +6,10 @@ CREATE TABLE manufacturers (
     id SERIAL PRIMARY KEY,
     name VARCHAR,
     type VARCHAR,
+    address VARCHAR,
+    email VARCHAR,
+    contact_person VARCHAR,
+    telephone VARCHAR,
     active BOOLEAN
 );
 

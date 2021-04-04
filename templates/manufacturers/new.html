@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<form class="newform" action="/manufacturers" method="post">
+    <label for="name">Manufacturer Name</label>
+    <input type="text" name="name">
+    <label for="type">Type</label>
+    <input type="text" name="type"></input>
+    <label for="address">Address</label>
+    <textarea name="address" id="adress"></textarea>
+    <label for="email">Email</label>
+    <input type="text" name="email"></input>
+    <label for="contact_person">Contact Person</label>
+    <input type="text" name="contact_person"></input>
+    <label for="telephone">Telephone</label>
+    <input type="text" name="telephone"></input>
+    <input type="submit" value="Submit">
+</form>
+<a href="/home">Back to home</a>
+    
+{% endblock %}

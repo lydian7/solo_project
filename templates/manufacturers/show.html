@@ -3,6 +3,7 @@
 <table class="fixed_header">
     <thead>
         <tr>
+            <th>Manufacturer id</th>
             <th>Manufacturer Name</th>
             <th>Type</th>
             <th>Active</th>
@@ -11,25 +12,21 @@
     <tbody>   
         {% for manufacturer in manufacturers  %}
         <tr>
-            <td><a href="/manufacturers/{{product.id}}">{{product.id}}</a></td>
-            <td>{{product.name}}</td>
-            <td>{{product.description}}</td>
-            <td>{{product.quantity}}</td>
-            {% for manufacturer in manufacturers  %}
-                {% if  product.manufacturer_id == manufacturer.id%}
-                <td>{{manufacturer.name}}</td>        
+            <td><a href="/manufacturers/{{manufacturer.id}}">{{manufacturer.id}}</a></td>
+            <td>{{manufacturer.name}}</td>
+            <td>{{manufacturer.type}}</td>
+            <td>
+                {% if manufacturer.active == true %}
+                    Yes
+                {% else %}
+                    No
                 {% endif %}
-            {% endfor %}
-            {% for branch in branches %}
-                {% if product.branch_id == branch.id %}
-                <td>{{branch.location}}</td>        
-                {% endif %}
-            {% endfor %}
+            </td>
         </tr>
         {% endfor %}
     </tbody>    
 </table>
 
-<a href="products/new">Create new Product</a>
+<a href="manufacturers/new">Create Manufacturer</a>
 <a href="/home">back</a>
 {% endblock %}

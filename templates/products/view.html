@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<section id="viewproduct">
+<section class="viewitem">
     <table>
         <thead>
             <tr>
@@ -39,7 +39,7 @@
         </tbody>
     </table>
 </section>        
-<section id="viewbuttons">
+<section class="viewbuttons">
     <form action="/products/{{product.id}}/edit">
     <button>Edit</button>
     </form>

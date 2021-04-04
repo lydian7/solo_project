@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+    
+<form class="itemeditform" action="/manufacturers/{{manufacturer.id}}" method="POST">
+    
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" value="{{manufacturer.name}}" required>
+    <label for="type">Type</label>
+    <input type="text" id="type" name="type" value="{{manufacturer.type}}" required>
+    <label for="adress">Address</label>
+    <textarea type="text" id="address" name="address" required></textarea>
+    <label for="email">Email</label>
+    <input type="text" name="email" value="{{manufacturer.email}}" required>
+    <label for="contact_person">Contact Person</label>
+    <input type="text" name="contact_person" value="{{manufacturer.contact_person}}" required>
+    <label for="telephone">Telephone</label>
+    <input type="text" name="telephone" value="{{manufacturer.telephone}}">
+    <label for="active">Active</label>
+    <select name="active" id="active">
+        <option value="True">Yes</option>
+        <option value="False">No</option>
+    </select>
+    <input type="submit" value="Submit">
+</form>
+
+<a href="/manufacturers/{{manufacturer.id}}">back</a>
+
+{% endblock %}
