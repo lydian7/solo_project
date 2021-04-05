@@ -1,4 +1,6 @@
+DROP TABLE sales;
 DROP TABLE products;
+DROP TABLE employees;
 DROP TABLE branches;
 DROP TABLE manufacturers;
 
@@ -20,6 +22,14 @@ CREATE TABLE branches (
     password INT
 );
 
+CREATE TABLE employees (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR,
+    surname VARCHAR,
+    position VARCHAR,
+    branch_id INT REFERENCES branches(id) ON DELETE CASCADE
+);
+
 CREATE TABLE products (
     id SERIAL PRIMARY KEY,
     name VARCHAR,
@@ -29,6 +39,13 @@ CREATE TABLE products (
     selling_price FLOAT,
     manufacturer_id INT REFERENCES manufacturers(id) ON DELETE CASCADE,
     branch_id INT REFERENCES branches(id) ON DELETE CASCADE
+);
+
+CREATE TABLE sales (
+    id SERIAL PRIMARY KEY,
+    quantity INT,
+    product_id INT REFERENCES products(id) ON DELETE CASCADE,
+    employee_id INT REFERENCES employees(id)
 );
 
 -- INSERT INTO manufacturers (name, type, active) VALUES ('Procter & Gamble', 'FMCG', True);

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<table class="fixed_header">
+    <thead>
+        <tr>
+            <th>Employee ID</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Position</th>
+            <th>Items Sold</th>
+            <th>Branch</th>
+        </tr>
+    </thead> 
+    <tbody>   
+        {% for employee in employees  %}
+        <tr>
+            <td>{{employee.id}}</td>
+            <td>{{employee.name}}</td>
+            <td>{{employee.surname}}</td>
+            <td>{{employee.position}}</td>
+            <td></td>
+            <td><a href="/logger/{{employee.branch_id}}">{{employee.branch_id}}</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>    
+</table>
+
+<a href="/home">back</a>
+    
+{% endblock %}

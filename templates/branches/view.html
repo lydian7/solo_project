@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="viewitem">
+    <table>
+        <thead>
+            <tr>
+                <th>Branch id</th>
+                <th>Branch Location</th>
+                <th>Manager</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tbody>   
+                <tr>
+                    <td>{{branch.id}}</td>
+                    <td>{{branch.location}}</td>
+                    <td>{{branch.manager}}</td>
+                </tr>
+            </tbody> 
+        </tbody>
+    </table>
+</section>        
+<section class="viewbuttons">
+    <form action="/branches/{{branch.id}}/edit">
+    <button>Edit</button>
+    </form>
+    <form action="/branches/delete/{{branch.id}}" method="POST">
+    <button value="{{branch.id}}">Delete</button>
+    </form>
+</section>
+<a href="/branches">back</a>
+{% endblock %}

@@ -46,7 +46,6 @@ def branch_inventory(id):
     inventory = []
 
     sql = "SELECT * FROM products WHERE branch_id = %s"
-    
     values = [id]
     results = run_sql(sql, values)        
 
@@ -56,4 +55,7 @@ def branch_inventory(id):
 
     return inventory
 
-# SELECT products.name, products.quantity, manufacturers.name, branches.location, branches.manager FROM ((products INNER JOIN branches ON products.branch_id = branches.id) INNER JOIN manufacturers ON products.manufacturer_id = manufacturers.id) WHERE branches.id = 1;        
+def update(branch):
+    sql = "UPDATE branches SET (location, manager, password) = (%s,%s,%s) WHERE id = %s"
+    values = [branch.location, branch.manager, branch.password, branch.id]
+    run_sql(sql, values)

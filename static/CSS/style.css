@@ -16,6 +16,7 @@ header > img {
 
 body {
     margin: 0;
+    font-family: 'Noto Sans JP', sans-serif;
 }
 
 footer {
@@ -54,8 +55,7 @@ footer {
 }
 
 table, th, td {
-    border-style: ridge;
-    border: 1px solid black;
+    border-style: inset;
     padding: 15px;
     table-layout: fixed;
     margin: auto;
@@ -87,7 +87,7 @@ table, th, td {
 }
 
 .fixed_header  thead {
-  background: blue;
+  background:rgb(5, 5, 85);
   color:#fff;
 }
 
@@ -115,11 +115,49 @@ table, th, td {
 }
 
 .viewitem thead {
-    background: blue;
+    background: rgb(5, 5, 85);
     color:#fff;
 }
 
 .viewfilter {
     margin-top: 10px;
 }
+
+.maincontainer {
+    display: flex;
+    height: 492px;
+    align-items: center;
+    border-style: inset;
+}
+
+.home {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    align-content:space-around;
+    flex-wrap: wrap;
+    margin: auto;
+    padding: 16px;
+    border-style: outset;
+    height: 250px;
+    width: 600px;
+}
+
+.button {
+    display:flex;
+    height:100px;
+    width:150px;
+    justify-content:center;
+    align-items:center;
+    border-style: outset;
+    border-color: silver;
+    border-radius: 10px;
+}
+
+#lowquantity {
+    background-color: red;
+    color: whitesmoke;
+}
+
 

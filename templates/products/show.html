@@ -3,8 +3,8 @@
 
 <section class="viewfilter">
 <form action="/branches/products" method = "POST">
-    <label for="branch">View by branch</label>
     <select name="branch" id="branch">
+            <option disabled selected value> -- Select Branch -- </option>
         {% for branch in branches  %}
             <option value="{{branch.id}}">{{branch.location}}</option>
         {% endfor %}
@@ -13,8 +13,8 @@
 </form>
 
 <form action="/manufacturers/products" method = "POST">
-    <label for="manufacturers">View by Manufacturer</label>
     <select name="manufacturer" id="manufacturer">
+        <option disabled selected value> -- Select Manufacturer -- </option>
         {% for manufacturer in manufacturers  %}
             {% if manufacturer.active == true %}
             <option value="{{manufacturer.id}}">{{manufacturer.name}}</option>
@@ -42,7 +42,11 @@
             <td><a href="/products/{{product.id}}">{{product.id}}</a></td>
             <td>{{product.name}}</td>
             <td>{{product.description}}</td>
+            {% if product.quantity >= 10 %}
             <td>{{product.quantity}}</td>
+            {% else %}
+            <td id="lowquantity" title="Low Stock">{{product.quantity}}</td>    
+            {% endif %}
             {% for manufacturer in manufacturers  %}
                 {% if  product.manufacturer_id == manufacturer.id%}
                 <td>{{manufacturer.name}}</td>        

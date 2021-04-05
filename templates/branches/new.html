@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<form class="newform" action="/branches" method="post">
+    <label for="location">Branch Location</label>
+    <input type="text" name="location">
+    <label for="manager">Manager</label>
+    <input type="text" name="manager"></input>
+    <label for="password">Password</label>
+    <input type="number" name="password" id="password"></input>
+    <input type="submit" value="Submit">
+</form>
+<a href="/home">Back to home</a>
+    
+{% endblock %}

@@ -55,3 +55,11 @@ def update(id):
 def delete(id):
     manufacturer_repository.delete(id)
     return redirect(url_for('manufacturers.show'))
+
+@manufacturers_blueprint.route('/manufacturers/products', methods = ['POST'])
+def products():
+       id = int(request.form['manufacturer'])
+       inventory = manufacturer_repository.manufacturer_inventory(id)
+       branches = branch_repository.select_all()
+       manufacturers = manufacturer_repository.select_all()
+       return render_template("manufacturers/products.html", inventory = inventory, branches = branches, manufacturers = manufacturers)

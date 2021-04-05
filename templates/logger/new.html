@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="newform">
+<form action="/logger/{{branch_id}}" method="POST">
+    <select name="employee_id" id="employee_id">
+        {% for employee in employees  %}
+        {% if  employee.branch_id == branch_id%}
+            <option value="{{employee.id}}">{{employee.name}} {{employee.surname}}</option>
+        {% endif %}
+        {% endfor %}
+    </select>        
+    <select name="product_id" id="product_id">
+        {% for product in inventory  %}
+        {% if product.branch_id == branch_id %}
+            <option value="{{product.id}}">{{product.name}}</option>
+        {% endif %}
+        {% endfor %}
+    </select>
+    <label for="quantity">Quantity</label>
+    <input type="number" name="quantity" id="quantity"></input>
+    <input type="submit">
+</form>
+</section>
+{% endblock %}

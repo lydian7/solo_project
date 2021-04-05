@@ -1,27 +1,31 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <table>
-        <tr>
-            <th>Product name</th>
-            <th>Description</th>
-            <th>Stock</th>
-            <th>Purchase Price</th>
-            <th>Sale Price</th>
-            <th>Manufacturer</th>
-            <th>Branch</th>
-        </tr>
+    <table class="fixed_header">
+        <thead>
+            <tr>
+                <th>Product name</th>
+                <th>Description</th>
+                <th>Stock</th>
+                <th>Purchase Price</th>
+                <th>Sale Price</th>
+                <th>Manufacturer</th>
+                <th>Branch</th>
+            </tr>
+        </thead>
+        <tbody>
         {% for product in inventory  %}
-        <tr>
-                <td>{{product.name}}</td>
-                <td>{{product.description}}</td>
-                <td>{{product.quantity}}</td>
-                <td>{{product.purchase_price}}</td>
-                <td>{{product.selling_price}}</td>
-                <td>{{product.manufacturer_id}}</td>
-                <td>{{branch.location}}</td>
-        </tr>
-        {% endfor %}    
+            <tr>
+                    <td>{{product.name}}</td>
+                    <td>{{product.description}}</td>
+                    <td>{{product.quantity}}</td>
+                    <td>{{product.purchase_price}}</td>
+                    <td>{{product.selling_price}}</td>
+                    <td>{{product.manufacturer_id}}</td>
+                    <td>{{branch.location}}</td>
+            </tr>
+        {% endfor %} 
+        </tbody>   
     </table>
    
     <a href="/home">Back to main</a>

@@ -1,6 +1,7 @@
 from db.run_sql import run_sql
 
 from models.manufacturer import Manufacturer
+from models.product import Product
 
 def save(manufacturer):
     sql = "INSERT INTO manufacturers(name, type, address, email, contact_person, telephone, active) VALUES (%s,%s,%s,%s,%s,%s,%s) RETURNING id"
@@ -45,4 +46,17 @@ def update(manufacturer):
     sql = "UPDATE manufacturers SET (name, type, address, email, contact_person, telephone, active) = (%s,%s,%s,%s,%s,%s,%s) WHERE id = %s"
     values = [manufacturer.name, manufacturer.type, manufacturer.address, manufacturer.email, manufacturer.contact_person, manufacturer.telephone, manufacturer.active, manufacturer.id]
     run_sql(sql, values)
+
+def manufacturer_inventory(id):
+    inventory = []
+
+    sql = "SELECT * FROM products WHERE manufacturer_id = %s"
+    values = [id]    
+    results = run_sql(sql, values)
+
+    for row in results:
+        product = Product(row['name'], row['description'], row['quantity'], row['purchase_price'], row['selling_price'], row['manufacturer_id'], row['branch_id'], row['id'])
+        inventory.append(product)
+
+    return inventory    
             
