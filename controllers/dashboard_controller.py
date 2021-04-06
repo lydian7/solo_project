@@ -31,7 +31,7 @@ def index():
         employees = employee_repository.select_all()
         return render_template("dashboard/dash.html", inventory = inventory, branch = branch, manufacturers = manufacturers, employees = employees, branch_id = id)
     else:
-        return redirect("/dashboard")    
+        return redirect("/login")    
 
 @dashboard_blueprint.route("/dashboard/sales", methods = ["POST"])
 def add_sale():

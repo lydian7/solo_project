@@ -21,3 +21,11 @@ def select_all():
         employees.append(employee)
         
     return employees
+
+def select(employee_id):
+    sql = "SELECT * FROM employees WHERE id = %s"
+    values = [employee_id]
+    result = run_sql(sql, values)[0]
+    employee = Employee(result['name'], result['surname'], result['position'], result['branch_id'], result['id'])
+    return employee
+

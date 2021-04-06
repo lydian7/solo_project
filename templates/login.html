@@ -5,6 +5,7 @@
     <form class="indexform" action="/dashboard" method="POST">
         <label for="location">Select Branch</label>
         <select name="location" id="location">
+            <option disabled selected value> -- Select Branch -- </option>
             {% for branch in branches %}
                 <option value="{{branch.id}}">{{branch.location}}</option>    
             {% endfor %}

@@ -1,38 +1,38 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<main class="maincontainer">
+<!-- <main class="maincontainer"> -->
     <section class="home">
         <div>
-            <form action="/products" name="products">
-                <button class="button" name="products">View/Edit Products</button>
+            <form action="/products">
+                <button class="button">Manage Products</button>
             </form>
         </div>
         <div>
-            <form action="/manufacturers" name="manufacturers">
-                <button class="button" name="manufacturers"> View/Edit Manufacturers</button>
+            <form action="/manufacturers">
+                <button class="button"> Manage Manufacturers</button>
             </form>
         </div>
         <div>
-            <form action="/branches" name="branches">
-                <button class="button" name="branches">View/Edit Branches</button>
+            <form action="/branches">
+                <button class="button">Manage Branches</button>
             </form>
         </div>
         <div>
-            <form action="/login" name="dashboard">
-                <button class="button" name="dashboard">View Dashboard</button>
+            <form action="/login">
+                <button class="button">View Dashboard</button>
             </form>
         </div>
         <div>
-            <form action="/logger" name="logger">
-                <button class="button" name="logger">Logger</button>
+            <form action="/logger">
+                <button class="button">Logger</button>
             </form>
         </div>
         <div>
-            <form action="/exit" name="exit">
-                <button class="button" name="exit">Exit</button>
+            <form action="/exit">
+                <button class="button">Exit</button>
             </form>
         </div>
     </section>    
-</main>
+<!-- </main> -->
 {% endblock%}

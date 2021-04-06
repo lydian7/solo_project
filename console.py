@@ -52,12 +52,50 @@ branches = [branch1, branch2, branch3, branch4, branch5, branch6, branch7, branc
 for branch in branches:
     branch_repository.save(branch)
 
-employee1 = Employee("Michael", "Scott", "Regional Manager", branch1.id)
+employee1 = Employee("Jim", "Halpert", "Sales Executive", branch1.id)
+employee2 = Employee("Andy", "Bernard", "Sales Executive", branch1.id)
+employee3 = Employee("Dwight", "Schrute", "Sales Executive", branch1.id)
+employee4 = Employee("Michael", "Scott", "Regional Manager", branch1.id)
+employee5 = Employee("Pam", "Beesly", "Sales Executive", branch1.id)
+employee6 = Employee("Ryan", "Howard", "Temp", branch1.id)
+employee7 = Employee("Stanley", "Hudson", "Sales Executive", branch1.id)
+employee8 = Employee("Kevin", "Malone", "Sales Executive", branch1.id)
+employee9 = Employee("Creed", "Bratton", "Sales Executive", branch1.id)
+employee10 = Employee("Toby", "Flenderson", "Sales Executive", branch1.id)
 
-employees = [employee1]
 
-for employee in employees:
-    employee_repository.save(employee1)
+employee11 = Employee("Dandy", "Bernard", "Sales Executive", branch2.id)
+employee12 = Employee("Dright", "Schrute", "Sales Executive", branch2.id)
+employee13 = Employee("Michel", "Scott", "Regional Manager", branch2.id)
+employee14 = Employee("Pamela", "Beesly", "Sales Executive", branch2.id)
+employee15 = Employee("Ryanovski", "Howard", "Temp", branch2.id)
+employee16 = Employee("Stan", "Hudson", "Sales Executive", branch2.id)
+employee17 = Employee("Kev", "Malone", "Sales Executive", branch2.id)
+employee18 = Employee("Apollo Creed", "Bratton", "Sales Executive", branch2.id)
+employee19 = Employee("Tim", "Halpert", "Sales Executive", branch2.id)
+employee20 = Employee("Toby", "Flenderson", "Sales Executive", branch2.id)
+
+
+employee21 = Employee("Grim", "Halpert", "Sales Executive", branch2.id)
+employee22 = Employee("Mandy", "Bernard", "Sales Executive", branch2.id)
+employee23 = Employee("Beety", "Schrute", "Sales Executive", branch2.id)
+employee24 = Employee("Prison Mike", "Scott", "Regional Manager", branch2.id)
+employee25 = Employee("Pamster", "Beesly", "Sales Executive", branch2.id)
+employee26 = Employee("Ry", "Howard", "Temp", branch2.id)
+employee27 = Employee("Stanislav", "Hudson", "Sales Executive", branch2.id)
+employee28 = Employee("Kevanov", "Malone", "Sales Executive", branch2.id)
+employee29 = Employee("Creed the band", "Bratton", "Sales Executive", branch2.id)
+employee30 = Employee("Toblerone", "Flenderson", "Sales Executive", branch2.id)
+
+
+employees1 = [employee1, employee2, employee3, employee4, employee5, employee6, employee7, employee8, employee9, employee10]
+employees2 = [employee11, employee12, employee13, employee14, employee15, employee16, employee17, employee18, employee19, employee20]
+employees3 = [employee21, employee22, employee23, employee24, employee25, employee26, employee27, employee28, employee29, employee30]
+
+all_employees = employees1 + employees2 + employees3
+
+for employee in all_employees:
+    employee_repository.save(employee)
 
 product1 = Product("Gilette razors 3pack", "Shaving razors", 50, 1.50, 3.99, manufacturer1.id, branch1.id)
 product2 = Product("Gilette razors 3pack", "Shaving razors", 35, 1.50, 3.99, manufacturer1.id, branch2.id)

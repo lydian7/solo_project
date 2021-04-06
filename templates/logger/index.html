@@ -7,8 +7,8 @@
             <th>Name</th>
             <th>Surname</th>
             <th>Position</th>
-            <th>Items Sold</th>
-            <th>Branch</th>
+            <th>Add Sale</th>
+            <th>View details</th>
         </tr>
     </thead> 
     <tbody>   
@@ -18,8 +18,16 @@
             <td>{{employee.name}}</td>
             <td>{{employee.surname}}</td>
             <td>{{employee.position}}</td>
-            <td></td>
-            <td><a href="/logger/{{employee.branch_id}}">{{employee.branch_id}}</a></td>
+            <td>
+                <form action="/logger/{{employee.branch_id}}">
+                    <button>+</button>
+                </form>
+            </td>
+            <td>
+                <form action="/logger/{{employee.id}}/view">
+                    <button>View</button>
+                </form>
+            </td>
         </tr>
         {% endfor %}
     </tbody>    

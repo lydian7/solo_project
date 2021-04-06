@@ -12,11 +12,26 @@
 <body>
     <header>
         <img src="../../static/images/dunder-mifflin-logo.png" alt="DN Logo">
-    </header>
-
+        <div class="navbar">
+            <a href="/home">Home</a>
+            <div class="dropdown">
+              <button class="dropbtn">Dropdown
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="/products">Products</a>
+                <a href="/branches">Branches</a>
+                <a href="/manufacturers">Manufacturers</a>
+                <a href="/login">Dashboard</a>
+                <a href="/logger">Logger</a>
+              </div>
+            </div>
+          </div>
+        </header>
+    <section class="maincontainer">
     {% block content %}
     {% endblock %}
-
+    </section>         
     <footer>
         FOOTER PLACEHOLDER
     </footer>

@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <table class="fixed_header">
+    <table class="fixed_header branchtable">
         <thead>
             <tr>
-                <th>Branch ID</th>
+                <th>Edit Branch</th>
                 <th>Branch name</th>
                 <th>Manager</th>
             </tr>
@@ -12,7 +12,11 @@
         <tbody>
             {% for branch in branches  %}
             <tr>
-                    <td><a href="/branches/{{branch.id}}">{{branch.id}}</a></td>
+                    <td>
+                        <form action="/branches/{{branch.id}}/edit">
+                            <button>Edit</button>
+                        </form>
+                    </td>
                     <td>{{branch.location}}</td>
                     <td>{{branch.manager}}</td>
             </tr>
@@ -20,7 +24,8 @@
         </tbody>            
     </table>
    
+    <section class="main_section_options branchoptions">
     <a href="branches/new">Create Branch</a>
-    <a href="/home">Back to main</a>
-
+    <a href="/home">Go Back</a>
+    </section>    
 {% endblock %}

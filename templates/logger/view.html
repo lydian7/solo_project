@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section class="viewitem">
+    <table>
+        <thead>
+            <tr>
+                <th>Employee ID</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Position</th>
+                <th>Branch</th>
+                <th>Items sold</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tbody>   
+                <tr>
+                    <td>{{employee.id}}</td>
+                    <td>{{employee.name}}</td>
+                    <td>{{employee.surname}}</td>
+                    <td>{{employee.position}}</td>
+                    {% for branch in branches %}
+                    {% if branch.id == employee.branch_id %}
+                    <td>{{branch.location}}</td>
+                    {% endif %}
+                    {% endfor %}
+                    <td>{{sales}}</td>
+                </tr>
+            </tbody> 
+        </tbody>
+    </table>
+</section>
+
+<a href="/logger"> back</a>
+
+{% endblock %}

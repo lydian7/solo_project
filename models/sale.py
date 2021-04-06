@@ -7,12 +7,3 @@ class Sale:
         self.employee_id = employee_id
         self.id = id
 
-    def employee_total(self, employee_id):
-        total = 0
-        sales = sales_repository.select_all()
-
-        for sale in sales:
-            if employee_id == sale.employee_id:
-                total += sale.quantity
-        
-        return total

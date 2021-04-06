@@ -4,6 +4,7 @@ import repositories.employee_repository as employee_repository
 import repositories.branch_repository as branch_repository
 import repositories.sales_repository as sales_repository
 from models.sale import Sale
+from models.employee import Employee
 
 logger_blueprint = Blueprint("logger", __name__)
 
@@ -27,4 +28,12 @@ def add(id):
     sale = Sale(int(quantity), product_id, employee_id)
     sales_repository.save(sale)
     return redirect("/logger")
+
+@logger_blueprint.route("/logger/<id>/view")
+def view(id):
+    employee_id = int(id)
+    employee = employee_repository.select(employee_id)
+    employee_sales = employee.total_sales(employee_id) 
+    branches = branch_repository.select_all()
+    return render_template("logger/view.html", employee = employee, sales = employee_sales, branches = branches)    
     

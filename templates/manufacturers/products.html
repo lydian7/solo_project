@@ -3,12 +3,14 @@
 
 <section class="viewfilter">
     <form action="/products">
-        <label>View All</label>
+        <select name="all" id="all">
+            <option value="viewall">View All</option>
+        </select>
         <input type="submit" value="Go">
     </form>
     <form action="/branches/products" method = "POST">
-        <label for="branch">View by branch</label>
         <select name="branch" id="branch">
+            <option disabled selected value> -- Select Branch -- </option>
             {% for branch in branches  %}
                 <option value="{{branch.id}}">{{branch.location}}</option>
             {% endfor %}
@@ -21,22 +23,38 @@
 <table class="fixed_header">
         <thead>
             <tr>
+                <th>DM Inventory</th>
                 <th>Product name</th>
                 <th>Description</th>
                 <th>Stock</th>
-                <th>Purchase Price</th>
-                <th>Sale Price</th>
+                <!-- <th>Purchase Price</th>
+                <th>Sale Price</th> -->
+                <th>Branch</th>
                 <th>Manufacturer</th>
             </tr>
         </thead>
         <tbody>
         {% for product in inventory  %}
             <tr>
+                <td>
+                    <form action="/products/{{product.id}}" name="view">
+                        <button name="view">View/Edit</button>
+                    </form>
+                </td>
                 <td>{{product.name}}</td>
                 <td>{{product.description}}</td>
+                {% if product.quantity >= 10 %}
                 <td>{{product.quantity}}</td>
-                <td>{{product.purchase_price}}</td>
-                <td>{{product.selling_price}}</td>
+                {% else %}
+                <td id="lowquantity" title="Low Stock">{{product.quantity}}</td>    
+                {% endif %}
+                    {% for branch in branches %}
+                    {% if branch.id == product.branch_id %}
+                    <td>{{branch.location}}</td>
+                    {% endif %}
+                    {% endfor %}
+                <!-- <td>{{product.purchase_price}}</td>
+                <td>{{product.selling_price}}</td> -->
                     {% for manufacturer in manufacturers  %}
                         {% if  product.manufacturer_id == manufacturer.id%}
                         <td>{{manufacturer.name}}</td>        
@@ -47,7 +65,9 @@
         </tbody>
     </table>
    
+    <section class="main_section_options manufacturerproducts">
     <a href="/home">Back to main</a>
+    </section>      
 
 
 
