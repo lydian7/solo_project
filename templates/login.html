@@ -7,7 +7,7 @@
         <select name="location" id="location">
             <option disabled selected value> -- Select Branch -- </option>
             {% for branch in branches %}
-                <option value="{{branch.id}}">{{branch.location}}</option>    
+                <option value="{{branch.id}}" required>{{branch.location}}</option>    
             {% endfor %}
         </select>
         <label for="password">Enter Password</label>

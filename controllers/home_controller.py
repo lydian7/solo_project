@@ -15,3 +15,7 @@ def menu():
 def login():
     branches = branch_repository.select_all()
     return render_template("login.html", branches = branches)
+
+@home_blueprint.route("/ms")
+def exit():
+    return render_template("ms.html")

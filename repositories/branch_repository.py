@@ -53,9 +53,20 @@ def branch_inventory(id):
         product = Product(row['name'], row['description'], row['quantity'], row['purchase_price'], row['selling_price'], row['manufacturer_id'], row['branch_id'], row['id'])
         inventory.append(product)
 
-    return inventory
+    return inventory 
 
 def update(branch):
     sql = "UPDATE branches SET (location, manager, password) = (%s,%s,%s) WHERE id = %s"
     values = [branch.location, branch.manager, branch.password, branch.id]
     run_sql(sql, values)
+
+def get_branch_by_employee(employee_id):
+    branch = None
+    sql =" SELECT branches.* FROM branches INNER JOIN employees on employees.branch_id = branches.id WHERE employees.id = %s;"
+    values = [employee_id]
+    result = run_sql(sql, values)[0]
+    
+    if result is not None:
+        branch = Branch(result['location'], result['manager'], result ['password'], result['id'])
+
+    return branch   

@@ -3,6 +3,7 @@ from flask import Blueprint
 import repositories.product_repository as product_repository
 import repositories.manufacturer_repository as manufacturer_repository
 import repositories.branch_repository as branch_repository
+import repositories.sales_repository as sales_repository
 from models.product import Product
 
 products_blueprint = Blueprint("products", __name__)

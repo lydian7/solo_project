@@ -5,24 +5,31 @@
         <thead>
             <tr>
                 <th>Product name</th>
-                <th>Description</th>
-                <th>Stock</th>
+                <th>Amount Sold</th>
                 <th>Purchase Price</th>
-                <th>Sale Price</th>
-                <th>Manufacturer</th>
-                <th>Branch</th>
+                <th>Selling Price</th>
+                <th>Turnover</th>
+                <th>Profit</th>
+                <!-- <th>Net Profit</th> -->
             </tr>
         </thead>
         <tbody>
         {% for product in inventory  %}
-            <tr>
-                    <td>{{product.name}}</td>
-                    <td>{{product.description}}</td>
-                    <td>{{product.quantity}}</td>
-                    <td>{{product.purchase_price}}</td>
-                    <td>{{product.selling_price}}</td>
-                    <td>{{product.manufacturer_id}}</td>
-                    <td>{{branch.location}}</td>
+            <tr>    
+                <td>{{product.name}}</td>
+                {% for sale in sales  %}
+                {% if sale.product_id == product.id %}
+                <td>{{sale.quantity}}</td>
+                {% endif %}      
+                {% endfor %}
+                <td>{{product.purchase_price}}</td>
+                <td>{{product.selling_price}}</td>
+                {% for sale in sales  %}
+                {% if sale.product_id == product.id %}
+                <td>{{(sale.quantity * product.selling_price)|round(1,'floor')}}</td>
+                <td>{{((product.selling_price - product.purchase_price) * sale.quantity)|round(1,'floor')}}</td>
+                {% endif %}
+                {% endfor %}
             </tr>
         {% endfor %} 
         </tbody>   

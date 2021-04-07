@@ -57,11 +57,11 @@ employee2 = Employee("Andy", "Bernard", "Sales Executive", branch1.id)
 employee3 = Employee("Dwight", "Schrute", "Sales Executive", branch1.id)
 employee4 = Employee("Michael", "Scott", "Regional Manager", branch1.id)
 employee5 = Employee("Pam", "Beesly", "Sales Executive", branch1.id)
-employee6 = Employee("Ryan", "Howard", "Temp", branch1.id)
-employee7 = Employee("Stanley", "Hudson", "Sales Executive", branch1.id)
-employee8 = Employee("Kevin", "Malone", "Sales Executive", branch1.id)
-employee9 = Employee("Creed", "Bratton", "Sales Executive", branch1.id)
-employee10 = Employee("Toby", "Flenderson", "Sales Executive", branch1.id)
+employee6 = Employee("Ryan", "Howard", "Temp", branch3.id)
+employee7 = Employee("Stanley", "Hudson", "Sales Executive", branch3.id)
+employee8 = Employee("Kevin", "Malone", "Sales Executive", branch3.id)
+employee9 = Employee("Creed", "Bratton", "Sales Executive", branch3.id)
+employee10 = Employee("Toby", "Flenderson", "Sales Executive", branch3.id)
 
 
 employee11 = Employee("Dandy", "Bernard", "Sales Executive", branch2.id)
@@ -69,23 +69,23 @@ employee12 = Employee("Dright", "Schrute", "Sales Executive", branch2.id)
 employee13 = Employee("Michel", "Scott", "Regional Manager", branch2.id)
 employee14 = Employee("Pamela", "Beesly", "Sales Executive", branch2.id)
 employee15 = Employee("Ryanovski", "Howard", "Temp", branch2.id)
-employee16 = Employee("Stan", "Hudson", "Sales Executive", branch2.id)
-employee17 = Employee("Kev", "Malone", "Sales Executive", branch2.id)
-employee18 = Employee("Apollo Creed", "Bratton", "Sales Executive", branch2.id)
-employee19 = Employee("Tim", "Halpert", "Sales Executive", branch2.id)
-employee20 = Employee("Toby", "Flenderson", "Sales Executive", branch2.id)
+employee16 = Employee("Stan", "Hudson", "Sales Executive", branch4.id)
+employee17 = Employee("Kev", "Malone", "Sales Executive", branch4.id)
+employee18 = Employee("Apollo Creed", "Bratton", "Sales Executive", branch4.id)
+employee19 = Employee("Tim", "Halpert", "Sales Executive", branch4.id)
+employee20 = Employee("Toby", "Flenderson", "Sales Executive", branch4.id)
 
 
-employee21 = Employee("Grim", "Halpert", "Sales Executive", branch2.id)
-employee22 = Employee("Mandy", "Bernard", "Sales Executive", branch2.id)
-employee23 = Employee("Beety", "Schrute", "Sales Executive", branch2.id)
-employee24 = Employee("Prison Mike", "Scott", "Regional Manager", branch2.id)
-employee25 = Employee("Pamster", "Beesly", "Sales Executive", branch2.id)
-employee26 = Employee("Ry", "Howard", "Temp", branch2.id)
-employee27 = Employee("Stanislav", "Hudson", "Sales Executive", branch2.id)
-employee28 = Employee("Kevanov", "Malone", "Sales Executive", branch2.id)
-employee29 = Employee("Creed the band", "Bratton", "Sales Executive", branch2.id)
-employee30 = Employee("Toblerone", "Flenderson", "Sales Executive", branch2.id)
+employee21 = Employee("Grim", "Halpert", "Sales Executive", branch5.id)
+employee22 = Employee("Mandy", "Bernard", "Sales Executive", branch5.id)
+employee23 = Employee("Beety", "Schrute", "Sales Executive", branch5.id)
+employee24 = Employee("Prison Mike", "Scott", "Regional Manager", branch5.id)
+employee25 = Employee("Pamster", "Beesly", "Sales Executive", branch5.id)
+employee26 = Employee("Ry", "Howard", "Temp", branch6.id)
+employee27 = Employee("Stanislav", "Hudson", "Sales Executive", branch6.id)
+employee28 = Employee("Kevanov", "Malone", "Sales Executive", branch6.id)
+employee29 = Employee("Creed the band", "Bratton", "Sales Executive", branch7.id)
+employee30 = Employee("Toblerone", "Flenderson", "Sales Executive", branch7.id)
 
 
 employees1 = [employee1, employee2, employee3, employee4, employee5, employee6, employee7, employee8, employee9, employee10]
@@ -130,11 +130,39 @@ product14, product15, product16, product17, product18, product19, product20, pro
 for product in products:    
     product_repository.save(product)
 
-sale1 = Sale(10, product1.id, employee1.id)
+sale1 = Sale(product1.id, employee1.id, branch1.id)
+sale2 = Sale(product2.id, employee1.id, branch1.id)
+sale3 = Sale(product3.id, employee1.id, branch1.id)
+sale4 = Sale(product4.id, employee1.id, branch1.id)
+sale5 = Sale(product5.id, employee1.id, branch1.id)
+sale6 = Sale(product6.id, employee1.id, branch1.id)
+sale7 = Sale(product7.id, employee1.id, branch1.id)
+sale8 = Sale(product8.id, employee1.id, branch1.id)
+sale9 = Sale(product9.id, employee1.id, branch1.id)
+sale10 = Sale(product10.id, employee1.id, branch1.id)
+sale11 = Sale(product11.id, employee1.id, branch1.id)
+sale12 = Sale(product12.id, employee1.id, branch1.id)
+sale13 = Sale(product13.id, employee1.id, branch1.id)
+sale14 = Sale(product14.id, employee1.id, branch1.id)
+sale15 = Sale(product15.id, employee1.id, branch1.id)
+sale16 = Sale(product16.id, employee1.id, branch1.id)
+sale17 = Sale(product17.id, employee1.id, branch1.id)
+sale18 = Sale(product18.id, employee1.id, branch1.id)
+sale19 = Sale(product19.id, employee1.id, branch1.id)
+sale20 = Sale(product20.id, employee1.id, branch1.id)
+sale21 = Sale(product21.id, employee1.id, branch1.id)
+sale22 = Sale(product22.id, employee1.id, branch1.id)
+sale23 = Sale(product23.id, employee1.id, branch1.id)
+sale24 = Sale(product24.id, employee1.id, branch1.id)
+sale25 = Sale(product25.id, employee1.id, branch1.id)
+sale26 = Sale(product26.id, employee1.id, branch1.id)
 
-sales = [sale1]
+sales = [sale1, sale2, sale3, sale4, sale5, sale6, sale7, sale8, sale9 ,sale10,
+        sale11, sale12, sale13, sale14, sale15, sale16, sale17, sale18, sale19 ,sale20,
+        sale21, sale22, sale23, sale24, sale25, sale26]
 
 for sale in sales:
    sales_repository.save(sale)
+
 
 pdb.set_trace()

@@ -11,11 +11,11 @@
 </head>
 <body>
     <header>
-        <img src="../../static/images/dunder-mifflin-logo.png" alt="DN Logo">
+        <img id="dmlogo" src="../../static/images/dunder-mifflin-logo.png" alt="DN Logo">
         <div class="navbar">
             <a href="/home">Home</a>
             <div class="dropdown">
-              <button class="dropbtn">Dropdown
+              <button class="dropbtn">Links
                 <i class="fa fa-caret-down"></i>
               </button>
               <div class="dropdown-content">
@@ -27,12 +27,13 @@
               </div>
             </div>
           </div>
-        </header>
+    </header>
     <section class="maincontainer">
     {% block content %}
     {% endblock %}
     </section>         
     <footer>
-        FOOTER PLACEHOLDER
+        ©MICHAEL SCOTT INVENTORY MANAGEMENT SYSTEM FOR GREAT MANAGERS
     </footer>
+  </body>
 </html>

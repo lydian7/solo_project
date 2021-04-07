@@ -45,7 +45,8 @@ CREATE TABLE sales (
     id SERIAL PRIMARY KEY,
     quantity INT,
     product_id INT REFERENCES products(id) ON DELETE CASCADE,
-    employee_id INT REFERENCES employees(id)
+    employee_id INT REFERENCES employees(id),
+    branch_id INT REFERENCES branches(id)
 );
 
 -- INSERT INTO manufacturers (name, type, active) VALUES ('Procter & Gamble', 'FMCG', True);

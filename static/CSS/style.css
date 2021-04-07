@@ -1,17 +1,21 @@
 header {
     margin: 0;
     display: flex;
-    flex-direction: row;
     background-color: rgba(224, 224, 217, 0.5);
     border-style: outset;
     padding: 15px;
+    align-items: center;
+    justify-content: center;
 }
 
 header > img {
     height: 100px;
     width: auto;
     justify-self: center;
-
+    align-self: center;
+    margin-right: auto;
+    position: relative;
+    right: 75px;
 }
 
 /* Navbar container */
@@ -19,6 +23,10 @@ header > img {
     overflow: hidden;
     background-color: rgb(230, 226, 208);
     font-family: Arial;
+    border-style: outset;
+    order: -1;
+    height: 50px;
+    margin-right:auto;
 }
   
   /* Links inside the navbar */
@@ -104,7 +112,7 @@ footer {
 }
 
 .indexlogin {
-    border-style: inset;
+    border-style: outset;
     display: flex;
     justify-content: center;
     margin: auto;
@@ -125,7 +133,7 @@ footer {
     margin-top: 10px;
 }
 
-table, th, td {
+.viewitem > table, th, td {
     border-style: inset;
     padding: 15px;
     table-layout: fixed;
@@ -155,6 +163,16 @@ table, th, td {
     border-collapse: collapse;
     margin: auto;
     
+}
+
+.manufacturer_view{
+    position:relative;
+    left: 125px;
+}
+
+.manufacturer_options {
+    position:relative;
+    left: -875px;
 }
 
 .branchtable {
@@ -190,6 +208,9 @@ table, th, td {
     display:flex;
     justify-content: center;
     padding: 20px;
+    position: relative;
+    top: 35px;
+    right: 425px;
 }
 
 .viewbuttons > form {
@@ -217,6 +238,7 @@ table, th, td {
     height: 492px;
     align-items: center;
     border-style: inset;
+    background-color: rgb(255, 255, 255);
 }
 
 .home {
@@ -231,6 +253,7 @@ table, th, td {
     border-style: outset;
     height: 250px;
     width: 600px;
+    background-color: whitesmoke;
 }
 
 .button {
@@ -241,7 +264,7 @@ table, th, td {
     align-items:center;
     border-style: inset;
     border-radius: 10px;
-    background-color: rgb(252, 252, 252);
+    background-color: rgb(228, 220, 220);
     color: rgb(13, 7, 102);
 }
 
@@ -268,4 +291,22 @@ table, th, td {
     bottom: 120px;
 }
 
+.viewitem {
+    position:relative;
+    left: 185px;
+    bottom: 75px;
+}
 
+.yt {
+    margin: auto ;
+}
+
+.manufacturer_view {
+    table-layout:fixed;
+    right: 150px;
+}
+
+.viewmanufacturerbuttons {
+    position:relative;
+    top: 125px;
+}

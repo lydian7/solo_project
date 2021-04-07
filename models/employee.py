@@ -17,9 +17,12 @@ class Employee:
                 total += sale.quantity
         
         return total
+    
 
-    # def total_revenue(self, employee_id):
-    #     total = 0
 
+
+
+
+    
 
     

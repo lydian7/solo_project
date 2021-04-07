@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 <section class="viewitem">
-    <table>
+    <table class="manufacturerview">
         <thead>
             <tr>
                 <th>Manufacturer id</th>
@@ -36,7 +36,7 @@
         </tbody>
     </table>
 </section>        
-<section class="viewbuttons">
+<section class="viewbuttons viewmanufacturerbuttons">
     <form action="/manufacturers/{{manufacturer.id}}/edit">
     <button>Edit</button>
     </form>
@@ -44,5 +44,4 @@
     <button value="{{manufacturer.id}}">Delete</button>
     </form>
 </section>
-<a href="/manufacturers">back</a>
 {% endblock %}
