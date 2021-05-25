@@ -122,7 +122,7 @@ product22 = Product("Tylenol", "pain killers", 25, 1.50, 3.99, manufacturer3.id,
 product23 = Product("Andrex Toilet Paper", "hygiene", 50, 1.50, 3.99, manufacturer4.id, branch7.id)
 product24 = Product("Andrex Toilet Paper", "hygiene", 50, 1.50, 3.99, manufacturer4.id, branch8.id)
 product25 = Product("Andrex Toilet Paper", "hygiene", 50, 1.50, 3.99, manufacturer4.id, branch9.id)
-product26 = Product("Braun Shaver", "hygiene", 50, 49.99, 89.99, manufacturer1.id, branch1.id)
+product26 = Product("Braun Shaver", "hygiene", 50, 49.99, 89.99, manufacturer1.id, branch5.id)
 
 products = [product1, product2, product3, product4, product5, product6, product7, product8, product9, product10, product11, product12, product13,
 product14, product15, product16, product17, product18, product19, product20, product21, product22, product23, product24, product25, product26]

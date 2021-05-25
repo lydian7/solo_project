@@ -62,7 +62,7 @@ def update(branch):
 
 def get_branch_by_employee(employee_id):
     branch = None
-    sql =" SELECT branches.* FROM branches INNER JOIN employees on employees.branch_id = branches.id WHERE employees.id = %s;"
+    sql = " SELECT branches.* FROM branches INNER JOIN employees on employees.branch_id = branches.id WHERE employees.id = %s;"
     values = [employee_id]
     result = run_sql(sql, values)[0]
     

@@ -50,7 +50,7 @@ def add(id):
             return redirect(url_for("logger.index"))    
     else:
         difference = stock_check * -1
-        return print(f"Not enough stock for product, you need to order {difference} more")    
+        return f"Not enough stock for product, you need to order {difference} more"   
 
 
 @logger_blueprint.route("/logger/<id>/view")
